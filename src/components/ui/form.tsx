@@ -12,6 +12,7 @@ import {
 
 import { cn } from "@/lib/utils"
 import { Label } from "@/components/ui/label"
+import { TriangleAlert } from "lucide-react"
 
 const Form = FormProvider
 
@@ -93,7 +94,7 @@ const FormLabel = React.forwardRef<
   return (
     <Label
       ref={ref}
-      className={cn(error && "text-destructive", className)}
+      className={cn(error && "text-[#c21777]", className)}
       htmlFor={formItemId}
       {...props}
     />
@@ -155,10 +156,13 @@ const FormMessage = React.forwardRef<
     <p
       ref={ref}
       id={formMessageId}
-      className={cn("text-sm font-medium text-destructive", className)}
+      className={cn("text-[12px] font-medium text-[#c21777]", className)}
       {...props}
     >
+      <span className="flex flex-row">
+      <TriangleAlert size={16} fill="#c21777" color="white" className="mr-[7px]"/>
       {body}
+      </span>
     </p>
   )
 })
