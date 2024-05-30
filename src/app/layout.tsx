@@ -1,8 +1,38 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const myFont = localFont({
+  src: [
+    {
+      path: "./avenir-nltpro/AvenirNextLTPro-UltLt.otf",
+      weight: "200"
+    },
+    {
+      path: "./avenir-nltpro/AvenirNextLTPro-Regular.otf",
+      weight: "400"
+    },
+    {
+      path: "./avenir-nltpro/AvenirNextLTPro-Medium.otf",
+      weight: "500"
+    },
+    {
+      path: "./avenir-nltpro/AvenirNextLTPro-Demi.otf",
+      weight: "600"
+    },
+    {
+      path: "./avenir-nltpro/AvenirNextLTPro-Bold.otf",
+      weight: "700"
+    },
+    {
+      path: "./avenir-nltpro/AvenirNextLTPro-Heavy.otf",
+      weight: "800"
+    },
+  ],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +46,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${myFont.className} tracking-wide`}>{children}</body>
     </html>
   );
 }
