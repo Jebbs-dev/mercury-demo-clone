@@ -19,7 +19,7 @@ const links = [
   { name: "Cards", href: "/cards", icon: CreditCard },
   { name: "Accounting", href: "/accounting", icon: BookOpenText },
   { name: "Capital", href: "/capital", icon: LineChart },
-  { name: "Accounts", href: "/", icon: Warehouse },
+  { name: "Accounts", href: "/accounts", icon: Warehouse },
 ];
 
 const NavLinks: React.FC<NavLinksProps> = () => {
